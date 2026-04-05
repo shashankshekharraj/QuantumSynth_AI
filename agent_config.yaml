@@ -1,0 +1,17 @@
+name: QuantumSynth_AI
+version: 1.0.0
+description: "Quantum molecular research agent for drug discovery"
+model: gemini-2.5-flash
+instruction: prompts/system_prompt.txt
+tools:
+  - tools.quantum_vqe_tool:run_quantum_vqe
+generate_content_config:
+  safety_settings:
+    - category: HARM_CATEGORY_HATE_SPEECH
+      threshold: BLOCK_MEDIUM_AND_ABOVE
+    - category: HARM_CATEGORY_DANGEROUS_CONTENT
+      threshold: BLOCK_MEDIUM_AND_ABOVE
+    - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+      threshold: BLOCK_MEDIUM_AND_ABOVE
+    - category: HARM_CATEGORY_HARASSMENT
+      threshold: BLOCK_MEDIUM_AND_ABOVE

@@ -1,0 +1,5 @@
+google-cloud-aiplatform>=1.140.0
+pandas>=2.2.0
+numpy>=1.26.0
+pydantic>=2.0.0
+cloudpickle>=3.0.0
