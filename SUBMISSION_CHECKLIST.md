@@ -14,6 +14,7 @@ The following screenshots capture the end-to-end verification of the agent withi
 | **Screenshot 4** | **Remote Test**: Successful execution of a quantum chemistry query against the live Vertex AI endpoint. | Implementation (20%), Problem Fit (20%) |
 | **Screenshot 5** | **Regression Tests**: Comparative dataset showing VQE performance against Full Configuration Interaction (FCI) benchmarks. | Novelty (15%), Implementation (20%) |
 | **Screenshot 6** | **Performance Summary**: Final audit table verifying 99.99% accuracy and 100% safety compliance. | Safety (25%), Problem Fit (20%) |
+| **GCP Console** | **QuantumSynth_AI_Active_Status.png**: GCP Console web UI showing Vertex AI Agent Engine with 3 deployed QuantumSynth_AI_Lightweight agents in ACTIVE state. | Implementation (20%), Architecture (20%) |
 
 ## 2. Deployment Confirmation
 
