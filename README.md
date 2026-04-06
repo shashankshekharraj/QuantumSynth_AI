@@ -73,6 +73,31 @@
 
 ---
 
+## Screenshot Gallery
+
+### 1. Code Architecture
+![Code Architecture](screenshot_1_code_architecture.png)
+
+### 2. Local Execution
+![Local Execution](screenshot_2_local_execution.png)
+
+### 3. Deployment Status
+![Deployment Status](screenshot_3_deployment_status.png)
+
+### 4. GCP Console - Active Status
+![GCP Console](QuantumSynth_AI_Active_Status.png)
+
+### 5. Remote Test
+![Remote Test](screenshot_4_remote_test.png)
+
+### 6. Regression Tests (VQE vs FCI)
+![Regression Tests](screenshot_5_regression_tests.png)
+
+### 7. Performance Summary
+![Performance Summary](screenshot_6_performance_summary.png)
+
+---
+
 ## Safety & Grounding (25% Weight)
 
 ### 4-Layer Safety Implementation
