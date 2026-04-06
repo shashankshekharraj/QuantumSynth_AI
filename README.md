@@ -98,32 +98,31 @@ flowchart TB
 ### Data Flow with Safety Validation
 
 ```mermaid
-%%{init: {'theme': 'neutral'}}%%
 sequenceDiagram
-    participant U as 👤 User
-    participant R as 🧠 Reasoning Engine
-    participant G as 🤖 Gemini 2.5 Flash
-    participant S as 🛡️ Safety Layer
-    participant T as 🔧 h2_energy_lookup
-    participant D as 📊 Quantum Dataset
+    participant U as User
+    participant R as Reasoning Engine
+    participant G as Gemini 2.5 Flash
+    participant S as Safety Layer
+    participant T as h2_energy_lookup
+    participant D as Quantum Dataset
 
-    U->>R: "H2 energy at 0.74Å?"
+    U->>R: H2 energy at 0.74A?
     R->>G: Process with System Prompt
     G->>S: Validate Query
 
-    alt ❌ Invalid Domain (no chemistry keywords)
-        S-->>G: "I specialize in quantum molecular simulations"
-    else ❌ Out of Range (< 0.3 or > 2.5Å)
-        S-->>G: "Bond length outside simulation range"
-    else ✅ Valid Query
+    alt Invalid Domain
+        S-->>G: I specialize in quantum molecular simulations
+    else Out of Range
+        S-->>G: Bond length outside simulation range
+    else Valid Query
         S->>T: h2_energy_lookup(0.74)
         T->>D: Find closest bond length
-        D-->>T: matched: 0.755Å, VQE: -1.1342 Ha
+        D-->>T: matched 0.755A, VQE -1.1342 Ha
         T-->>G: Result + Grounding + Uncertainty
     end
 
     G-->>R: Formatted Response
-    R-->>U: "Energy: -1.1342 Ha (VQE 4-qubit, ±0.002 Ha)"
+    R-->>U: Energy -1.1342 Ha (VQE 4-qubit)
 ```
 
 ---
