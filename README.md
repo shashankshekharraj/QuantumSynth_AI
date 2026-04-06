@@ -98,7 +98,7 @@ flowchart TB
 ### Data Flow with Safety Validation
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#E3F2FD', 'primaryTextColor': '#1565C0', 'primaryBorderColor': '#1976D2', 'lineColor': '#1976D2', 'secondaryColor': '#FFF8E1', 'tertiaryColor': '#FFFFFF', 'background': '#FFFFFF', 'actorBkg': '#BBDEFB', 'actorBorder': '#1565C0', 'actorTextColor': '#0D47A1', 'actorLineColor': '#1976D2', 'signalColor': '#1565C0', 'signalTextColor': '#1565C0', 'labelBoxBkgColor': '#E8F5E9', 'labelBoxBorderColor': '#4CAF50', 'labelTextColor': '#2E7D32', 'loopTextColor': '#1565C0', 'noteBkgColor': '#FFF8E1', 'noteTextColor': '#F57F17', 'noteBorderColor': '#FFC107', 'activationBkgColor': '#E1F5FE', 'activationBorderColor': '#03A9F4', 'sequenceNumberColor': '#FFFFFF'}}}%%
+%%{init: {'theme': 'neutral'}}%%
 sequenceDiagram
     participant U as 👤 User
     participant R as 🧠 Reasoning Engine
