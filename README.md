@@ -97,33 +97,7 @@ flowchart TB
 
 ### Data Flow with Safety Validation
 
-```mermaid
-sequenceDiagram
-    participant U as User
-    participant R as Reasoning Engine
-    participant G as Gemini 2.5 Flash
-    participant S as Safety Layer
-    participant T as h2_energy_lookup
-    participant D as Quantum Dataset
-
-    U->>R: H2 energy at 0.74A?
-    R->>G: Process with System Prompt
-    G->>S: Validate Query
-
-    alt Invalid Domain
-        S-->>G: I specialize in quantum molecular simulations
-    else Out of Range
-        S-->>G: Bond length outside simulation range
-    else Valid Query
-        S->>T: h2_energy_lookup(0.74)
-        T->>D: Find closest bond length
-        D-->>T: matched 0.755A, VQE -1.1342 Ha
-        T-->>G: Result + Grounding + Uncertainty
-    end
-
-    G-->>R: Formatted Response
-    R-->>U: Energy -1.1342 Ha (VQE 4-qubit)
-```
+![Sequence Diagram](https://mermaid.ink/img/c2VxdWVuY2VEaWFncmFtCiAgICBwYXJ0aWNpcGFudCBVIGFzIFVzZXIKICAgIHBhcnRpY2lwYW50IFIgYXMgUmVhc29uaW5nIEVuZ2luZQogICAgcGFydGljaXBhbnQgRyBhcyBHZW1pbmkgMi41IEZsYXNoCiAgICBwYXJ0aWNpcGFudCBTIGFzIFNhZmV0eSBMYXllcgogICAgcGFydGljaXBhbnQgVCBhcyBoMl9lbmVyZ3lfbG9va3VwCiAgICBwYXJ0aWNpcGFudCBEIGFzIFF1YW50dW0gRGF0YXNldAogICAgVS0+PlI6IEgyIGVuZXJneSBhdCAwLjc0QT8KICAgIFItPj5HOiBQcm9jZXNzIHdpdGggU3lzdGVtIFByb21wdAogICAgRy0+PlM6IFZhbGlkYXRlIFF1ZXJ5CiAgICBhbHQgSW52YWxpZCBEb21haW4KICAgICAgICBTLS0+Pkc6IEkgc3BlY2lhbGl6ZSBpbiBxdWFudHVtIHNpbXVsYXRpb25zCiAgICBlbHNlIE91dCBvZiBSYW5nZQogICAgICAgIFMtLT4+RzogQm9uZCBsZW5ndGggb3V0c2lkZSByYW5nZQogICAgZWxzZSBWYWxpZCBRdWVyeQogICAgICAgIFMtPj5UOiBoMl9lbmVyZ3lfbG9va3VwKDAuNzQpCiAgICAgICAgVC0+PkQ6IEZpbmQgY2xvc2VzdCBib25kIGxlbmd0aAogICAgICAgIEQtLT4+VDogbWF0Y2hlZCAwLjc1NUEgVlFFIC0xLjEzNDIgSGEKICAgICAgICBULS0+Pkc6IFJlc3VsdCArIEdyb3VuZGluZwogICAgZW5kCiAgICBHLS0+PlI6IEZvcm1hdHRlZCBSZXNwb25zZQogICAgUi0tPj5VOiBFbmVyZ3kgLTEuMTM0MiBIYQ==?bgColor=!white)
 
 ---
 
