@@ -76,25 +76,25 @@
 ## Screenshot Gallery
 
 ### 1. Code Architecture
-![Code Architecture](screenshot_1_code_architecture.png)
+<img src="screenshot_1_code_architecture.png" width="100%" style="page-break-after: always;"/>
 
 ### 2. Local Execution
-![Local Execution](screenshot_2_local_execution.png)
+<img src="screenshot_2_local_execution.png" width="100%" style="page-break-after: always;"/>
 
 ### 3. Deployment Status
-![Deployment Status](screenshot_3_deployment_status.png)
+<img src="screenshot_3_deployment_status.png" width="100%" style="page-break-after: always;"/>
 
 ### 4. GCP Console - Active Status
-![GCP Console](QuantumSynth_AI_Active_Status.png)
+<img src="QuantumSynth_AI_Active_Status.png" width="100%" style="page-break-after: always;"/>
 
 ### 5. Remote Test
-![Remote Test](screenshot_4_remote_test.png)
+<img src="screenshot_4_remote_test.png" width="100%" style="page-break-after: always;"/>
 
 ### 6. Regression Tests (VQE vs FCI)
-![Regression Tests](screenshot_5_regression_tests.png)
+<img src="screenshot_5_regression_tests.png" width="100%" style="page-break-after: always;"/>
 
 ### 7. Performance Summary
-![Performance Summary](screenshot_6_performance_summary.png)
+<img src="screenshot_6_performance_summary.png" width="100%"/>
 
 ---
 
