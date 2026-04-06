@@ -235,4 +235,4 @@ python agent.py
 
 *Built for TCS-Google Quantum AI Hackathon - Track 2 {"Build with Vertex AI"}*
 
-*Google AI Quantum Leap Program - Skullathon → Ideathon → Hackathon*
+*Google AI Quantum Leap Program - Skillathon → Ideathon → Hackathon*
