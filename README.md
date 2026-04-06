@@ -8,7 +8,7 @@
 
 ---
 
-## TCS Google AI Ekata Hackathon - Track 2 Submission
+## TCS-Google Quantum AI Hackathon - Track 2 Submission
 
 > **Agent Name:** `QuantumSynth_AI`
 > **Reasoning Engine ID:** `3890741191896989696`
@@ -274,6 +274,6 @@ python agent.py
 
 ---
 
-*Built for TCS Google AI Ekata Hackathon - Track 2: Build with Vertex AI*
+*Built for TCS-Google Quantum AI Hackathon - Track 2: Build with Vertex AI*
 
 *Google AI Quantum Leap Program - Skullathon → Ideathon → Hackathon*
