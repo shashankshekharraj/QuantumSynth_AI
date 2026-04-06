@@ -156,31 +156,30 @@ response["uncertainty"] = "±0.002 Hartree (chemical accuracy)"
 
 ```
 QuantumSynth_AI/
-├── agent.py                 # Main agent with safety guardrails
-├── agent_config.yaml        # ADK configuration
-├── agent_engine_app.py      # Vertex deployment wrapper
-├── h2_quantum_dataset.csv   # 30 pre-computed VQE energies
-├── h2_vqe_engine.py         # Original quantum simulation engine
-├── h2_vqe_circuit.py        # VQE circuit implementation
-├── requirements.txt         # Dependencies
-├── README.md                # This file
-├── SUBMISSION_CHECKLIST.md  # Quick reference for judges
+├── agent.py                              # Main agent with safety guardrails
+├── agent_config.yaml                     # ADK configuration
+├── agent_engine_app.py                   # Vertex deployment wrapper
+├── h2_quantum_dataset.csv                # 30 pre-computed VQE energies
+├── h2_vqe_engine.py                      # Original quantum simulation engine
+├── h2_vqe_circuit.py                     # VQE circuit implementation
+├── requirements.txt                      # Dependencies
+├── README.md                             # This file
+├── SUBMISSION_CHECKLIST.md               # Quick reference for judges
 │
 ├── prompts/
-│   └── system_prompt.txt    # Agent persona and instructions
+│   └── system_prompt.txt                 # Agent persona and instructions
 │
 ├── tools/
-│   ├── quantum_lookup_tool.py   # Deployable lookup tool
-│   └── quantum_vqe_tool.py      # Original VQE tool
+│   ├── quantum_lookup_tool.py            # Deployable lookup tool
+│   └── quantum_vqe_tool.py               # Original VQE tool
 │
-└── screenshots/             # All 7 verification screenshots
-    ├── screenshot_1_code_architecture.png
-    ├── screenshot_2_local_execution.png
-    ├── screenshot_3_deployment_status.png
-    ├── screenshot_4_remote_test.png
-    ├── screenshot_5_regression_tests.png
-    ├── screenshot_6_performance_summary.png
-    └── QuantumSynth_AI_Active_Status.png
+├── screenshot_1_code_architecture.png    # Code Architecture
+├── screenshot_2_local_execution.png      # Local Execution
+├── screenshot_3_deployment_status.png    # Deployment Status
+├── screenshot_4_remote_test.png          # Remote Test
+├── screenshot_5_regression_tests.png     # Regression Tests
+├── screenshot_6_performance_summary.png  # Performance Summary
+└── QuantumSynth_AI_Active_Status.png     # GCP Console Verification
 ```
 
 ---
