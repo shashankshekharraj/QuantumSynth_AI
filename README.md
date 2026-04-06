@@ -44,56 +44,7 @@
 
 ## Architecture
 
-```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#E3F2FD', 'primaryTextColor': '#1565C0', 'primaryBorderColor': '#1976D2', 'lineColor': '#42A5F5', 'secondaryColor': '#FFF8E1', 'tertiaryColor': '#FFFFFF', 'background': '#FFFFFF', 'mainBkg': '#FFFFFF', 'nodeBorder': '#1976D2', 'clusterBkg': '#F5F5F5', 'clusterBorder': '#1976D2', 'titleColor': '#1565C0'}}}%%
-flowchart TB
-    subgraph USER["👤 User Query"]
-        Q[/"What is H2 energy at 0.74 Angstrom?"/]
-    end
-
-    subgraph GCP["☁️ Google Cloud Platform"]
-        subgraph VERTEX["Vertex AI Reasoning Engine<br/>ID: 3890741191896989696"]
-            subgraph AGENT["QuantumSynth_AI Agent"]
-                GEMINI["🤖 Gemini 2.5 Flash"]
-                SAFETY["🛡️ Safety Guardrails<br/>• Domain Validation<br/>• Range Check 0.3-2.5Å<br/>• Output Grounding<br/>• Uncertainty Bounds"]
-            end
-            subgraph TOOLS["🔧 Tool Layer"]
-                LOOKUP["h2_energy_lookup()"]
-            end
-        end
-        subgraph DATA["📊 Quantum Dataset"]
-            CSV["h2_quantum_dataset.csv<br/>30 VQE Energies"]
-            VQE["⚛️ 4-Qubit VQE<br/>Hardware Efficient Ansatz<br/>COBYLA Optimizer"]
-        end
-    end
-
-    subgraph RESPONSE["📤 Grounded Response"]
-        R["Energy: -1.1342 Ha<br/>Method: VQE 4-qubit circuit<br/>Uncertainty: ±0.002 Ha"]
-    end
-
-    Q --> GEMINI
-    GEMINI --> SAFETY
-    SAFETY --> LOOKUP
-    LOOKUP --> CSV
-    CSV -.-> VQE
-    LOOKUP --> GEMINI
-    GEMINI --> R
-
-    style USER fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px,color:#2E7D32
-    style GCP fill:#E3F2FD,stroke:#1976D2,stroke-width:3px,color:#1565C0
-    style VERTEX fill:#FFF8E1,stroke:#F9A825,stroke-width:2px,color:#F57F17
-    style AGENT fill:#FCE4EC,stroke:#E91E63,stroke-width:2px,color:#C2185B
-    style TOOLS fill:#F3E5F5,stroke:#9C27B0,stroke-width:2px,color:#7B1FA2
-    style DATA fill:#FFEBEE,stroke:#EF5350,stroke-width:2px,color:#C62828
-    style RESPONSE fill:#E0F7FA,stroke:#00ACC1,stroke-width:2px,color:#00838F
-    style Q fill:#C8E6C9,stroke:#43A047,color:#1B5E20
-    style GEMINI fill:#BBDEFB,stroke:#1E88E5,color:#0D47A1
-    style SAFETY fill:#FFCDD2,stroke:#E53935,color:#B71C1C
-    style LOOKUP fill:#E1BEE7,stroke:#8E24AA,color:#4A148C
-    style CSV fill:#FFCCBC,stroke:#FF7043,color:#BF360C
-    style VQE fill:#FFE0B2,stroke:#FB8C00,color:#E65100
-    style R fill:#B2EBF2,stroke:#00BCD4,color:#006064
-```
+![Architecture Diagram](https://mermaid.ink/img/Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBVU0VSW1VzZXIgUXVlcnldCiAgICAgICAgUVtXaGF0IGlzIEgyIGVuZXJneSBhdCAwLjc0IEFuZ3N0cm9tP10KICAgIGVuZAogICAgc3ViZ3JhcGggR0NQW0dvb2dsZSBDbG91ZCBQbGF0Zm9ybV0KICAgICAgICBzdWJncmFwaCBWRVJURVhbVmVydGV4IEFJIFJlYXNvbmluZyBFbmdpbmVdCiAgICAgICAgICAgIHN1YmdyYXBoIEFHRU5UW1F1YW50dW1TeW50aF9BSSBBZ2VudF0KICAgICAgICAgICAgICAgIEdFTUlOSVtHZW1pbmkgMi41IEZsYXNoXQogICAgICAgICAgICAgICAgU0FGRVRZW1NhZmV0eSBHdWFyZHJhaWxzXQogICAgICAgICAgICBlbmQKICAgICAgICAgICAgc3ViZ3JhcGggVE9PTFNbVG9vbCBMYXllcl0KICAgICAgICAgICAgICAgIExPT0tVUFtoMl9lbmVyZ3lfbG9va3VwXQogICAgICAgICAgICBlbmQKICAgICAgICBlbmQKICAgICAgICBzdWJncmFwaCBEQVRBW1F1YW50dW0gRGF0YXNldF0KICAgICAgICAgICAgQ1NWW2gyX3F1YW50dW1fZGF0YXNldC5jc3ZdCiAgICAgICAgICAgIFZRRVs0LVF1Yml0IFZRRV0KICAgICAgICBlbmQKICAgIGVuZAogICAgc3ViZ3JhcGggUkVTUE9OU0VbR3JvdW5kZWQgUmVzcG9uc2VdCiAgICAgICAgUltFbmVyZ3k6IC0xLjEzNDIgSGFdCiAgICBlbmQKICAgIFEgLS0+IEdFTUlOSQogICAgR0VNSU5JIC0tPiBTQUZFVFkKICAgIFNBRkVUWSAtLT4gTE9PS1VQCiAgICBMT09LVVAgLS0+IENTVgogICAgQ1NWIC0uLT4gVlFFCiAgICBMT09LVVAgLS0+IEdFTUlOSQogICAgR0VNSU5JIC0tPiBS?bgColor=!white)
 
 ### Data Flow with Safety Validation
 
