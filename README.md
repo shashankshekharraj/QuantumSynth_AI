@@ -45,6 +45,7 @@
 ## Architecture
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#E3F2FD', 'primaryTextColor': '#1565C0', 'primaryBorderColor': '#1976D2', 'lineColor': '#42A5F5', 'secondaryColor': '#FFF8E1', 'tertiaryColor': '#FFFFFF', 'background': '#FFFFFF', 'mainBkg': '#FFFFFF', 'nodeBorder': '#1976D2', 'clusterBkg': '#F5F5F5', 'clusterBorder': '#1976D2', 'titleColor': '#1565C0'}}}%%
 flowchart TB
     subgraph USER["👤 User Query"]
         Q[/"What is H2 energy at 0.74 Angstrom?"/]
@@ -78,16 +79,26 @@ flowchart TB
     LOOKUP --> GEMINI
     GEMINI --> R
 
-    style GCP fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
-    style VERTEX fill:#e3f2fd,stroke:#2196f3,stroke-width:2px
-    style AGENT fill:#fff3e0,stroke:#ff9800,stroke-width:2px
-    style SAFETY fill:#ffebee,stroke:#f44336,stroke-width:2px
-    style DATA fill:#fce4ec,stroke:#e91e63,stroke-width:2px
+    style USER fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px,color:#2E7D32
+    style GCP fill:#E3F2FD,stroke:#1976D2,stroke-width:3px,color:#1565C0
+    style VERTEX fill:#FFF8E1,stroke:#F9A825,stroke-width:2px,color:#F57F17
+    style AGENT fill:#FCE4EC,stroke:#E91E63,stroke-width:2px,color:#C2185B
+    style TOOLS fill:#F3E5F5,stroke:#9C27B0,stroke-width:2px,color:#7B1FA2
+    style DATA fill:#FFEBEE,stroke:#EF5350,stroke-width:2px,color:#C62828
+    style RESPONSE fill:#E0F7FA,stroke:#00ACC1,stroke-width:2px,color:#00838F
+    style Q fill:#C8E6C9,stroke:#43A047,color:#1B5E20
+    style GEMINI fill:#BBDEFB,stroke:#1E88E5,color:#0D47A1
+    style SAFETY fill:#FFCDD2,stroke:#E53935,color:#B71C1C
+    style LOOKUP fill:#E1BEE7,stroke:#8E24AA,color:#4A148C
+    style CSV fill:#FFCCBC,stroke:#FF7043,color:#BF360C
+    style VQE fill:#FFE0B2,stroke:#FB8C00,color:#E65100
+    style R fill:#B2EBF2,stroke:#00BCD4,color:#006064
 ```
 
 ### Data Flow with Safety Validation
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#E3F2FD', 'primaryTextColor': '#1565C0', 'primaryBorderColor': '#1976D2', 'lineColor': '#1976D2', 'secondaryColor': '#FFF8E1', 'tertiaryColor': '#FFFFFF', 'background': '#FFFFFF', 'actorBkg': '#BBDEFB', 'actorBorder': '#1565C0', 'actorTextColor': '#0D47A1', 'actorLineColor': '#1976D2', 'signalColor': '#1565C0', 'signalTextColor': '#1565C0', 'labelBoxBkgColor': '#E8F5E9', 'labelBoxBorderColor': '#4CAF50', 'labelTextColor': '#2E7D32', 'loopTextColor': '#1565C0', 'noteBkgColor': '#FFF8E1', 'noteTextColor': '#F57F17', 'noteBorderColor': '#FFC107', 'activationBkgColor': '#E1F5FE', 'activationBorderColor': '#03A9F4', 'sequenceNumberColor': '#FFFFFF'}}}%%
 sequenceDiagram
     participant U as 👤 User
     participant R as 🧠 Reasoning Engine
